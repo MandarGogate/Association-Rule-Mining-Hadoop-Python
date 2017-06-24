@@ -42,12 +42,12 @@ export PATH=$PATH:$HADOOP_HOME/bin
 ### Configure Hadoop
 
 ```bash
-cat >> $HADOOP_PREFIX/etc/hadoop/hadoop-env.sh <<EOF
+cat >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh <<EOF
 export JAVA_HOME=${JAVA_HOME}
-export HADOOP_PREFIX=${HADOOP_PREFIX}
+export HADOOP_HOME=${HADOOP_HOME}
 EOF
 
-cat > $HADOOP_PREFIX/etc/hadoop/core-site.xml <<EOF
+cat > $HADOOP_HOME/etc/hadoop/core-site.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
@@ -58,7 +58,7 @@ cat > $HADOOP_PREFIX/etc/hadoop/core-site.xml <<EOF
 </configuration>
 EOF
 
-cat > $HADOOP_PREFIX/etc/hadoop/hdfs-site.xml <<EOF
+cat > $HADOOP_HOME/etc/hadoop/hdfs-site.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
